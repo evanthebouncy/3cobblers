@@ -44,7 +44,7 @@ predictor4(x,y) = ( (x-0.2)^2 + (y-0.2)^2 ) < 0.2^2
 predictor5(x,y) = predictor2(x,y) | predictor4(x,y)
 
 d = generate_data(200, predictor2)
-b1 = train_boosting(circle1, 1, [(0.0, 1.0) for i in 1:3], d, 10)
+b1 = train_boosting(circle1, 1, [(0.0, 1.0) for i in 1:3], d, 100)
 
 decision_fun(x,y) = (if beval(b1, x,y)>0.0
                        1.0
